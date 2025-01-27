@@ -119,10 +119,6 @@ public class VideoGameListStepdefs {
         request = Utils.getVideoGameListXML();
     }
 
-
-    @Given("The API end-point videogame")
-    public void theAPIEndPointVideogame() {
-    }
 }
 
 

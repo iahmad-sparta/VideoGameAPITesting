@@ -18,10 +18,14 @@ public class GetVideoGameIDStepDefs {
     Response response;
     RequestSpecification request;
 
-    @Given("I have end point videogameid json")
-    public void iHaveEndPointVideogameidJson() {
-        int id = 1;
+    @Given("I have end point videogameid json with <{int}>")
+    public void iHaveEndPointVideogameidJsonWith(int id) {
         request = Utils.getVideoGame_WithId_json(id);
+    }
+
+    @Given("I have end point videogameid xml with <{int}>")
+    public void iHaveEndPointVideogameidXmlWith(int id) {
+        request = Utils.getVideoGame_WithId_xml(id);
     }
 
     @When("I specify the accept header with application json")
@@ -84,6 +88,42 @@ public class GetVideoGameIDStepDefs {
     public void theResponseBodyIsInXMLFormat() {
         assertThat(response.getContentType(), containsString("application/xml"));
         assertThat(response.getBody().asString(), not(emptyOrNullString()));
+    }
+
+    @And("I send GET HTTP request for JSON videogame by invalid id XML")
+    public void iSendGETHTTPRequestForJSONVideogameByInvalidIdXML() {
+        response = RestAssured
+                .given(request)
+                .when()
+                .get()
+                .then()
+                .log().all()
+                .extract().response();
+    }
+
+    @Then("The API returns a {int} server error response XML.")
+    public void theAPIReturnsAServerErrorResponseXML(int statusCode) {
+        assertThat("Status code should be " + statusCode, response.getStatusCode(), is(statusCode));
+        assertThat("Response content type should be XML", response.getContentType(), containsString("application/xml"));
+        assertThat("Response body should not be empty", response.getBody().asString(), is(not(emptyString())));
+    }
+
+    @And("I send GET HTTP request for JSON videogame by invalid id JSON")
+    public void iSendGETHTTPRequestForJSONVideogameByInvalidIdJSON() {
+        response = RestAssured
+                .given(request)
+                .when()
+                .get()
+                .then()
+                .log().all()
+                .extract().response();
+    }
+
+    @Then("The API returns a {int} server error response json")
+    public void theAPIReturnsAServerErrorResponseJson(int statusCode) {
+        assertThat("Status code should be " + statusCode, response.getStatusCode(), is(statusCode));
+        assertThat("Response content type should be JSON", response.getContentType(), containsString("application/json"));
+        assertThat("Response body should not be empty", response.getBody().asString(), is(not(emptyString())));
     }
 
 }
