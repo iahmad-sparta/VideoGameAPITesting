@@ -32,9 +32,10 @@ jobs:
         pwd
         cd ideoGameAPITesting
         mvn compile
-        echo "mvn -B package --file pom.xml"
     - name: Perform Housekeeping
-      run: mvn clean
+      run: |
+        cd ideoGameAPITesting
+        mvn clean
   Run-Unit-Tests:
     runs-on: ubuntu-latest
     needs: [Build-Code]
