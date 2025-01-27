@@ -54,6 +54,7 @@ jobs:
           mvn -B package --file pom.xml
   Output:
     runs-on: ubuntu-latest
+    needs: [Build-Code]
     steps:
       - name: Output GitHub context
         run: echo "${{ toJSON(github) }}" # acessing meta-data and storing as json
