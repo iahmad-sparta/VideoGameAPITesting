@@ -9,6 +9,7 @@ During the project, our group decided to use Git in a collaborative environment.
 ### Our branches
 ![image](https://github.com/user-attachments/assets/a4f1c601-def4-445e-8eba-9f18ea8c1b88)
 
+
 When delegating tasks, we discussed what each pair was to do in the next hour. After this hour, we discussed progress and what could be developed next. With everyone having their own branch, we could see progress on our local machines.
 
 This project also used git commits and merging. The use of commits allowed everyone to see what progress was made to what code, while the use of merging allowed components to be integrated with one another. At the end of this project, all branches were able to merged into main-test, with a small number of conflicts which we solved as a team. After all conflicts were solved, main-test was pushed to main, to avoid a potential rollback.
@@ -83,7 +84,7 @@ VideoGameAPITesting
     └─README.md  
 ```
 As illustrated by a class diagram
-![f02569bd-d267-467d-823c-e21a0ddc099d](https://github.com/user-attachments/assets/71a255c2-3abc-452a-b690-d4b869bfdb87)
+![image](APITestingClassDiagram.png)
 
 ## What was Tested?
 In this project we found an number of testing areas (Epics) which we derived user stories from. The user Epics identified were:
