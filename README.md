@@ -31,7 +31,7 @@ To run this project, the following technologies are required:
    
 ## How to Contribute
 
-Clone the repository:
+### Clone the repository:
 ```
 git clone https://github.com/robert-h25/VideoGameAPITesting.git
 ```
@@ -52,7 +52,7 @@ git push origin feature/your-feature-name
  ```
 
 ### Open a pull request.
-
+[Create a pull request](https://github.com/robert-h25/VideoGameAPITesting/pulls)
    
 ## Project Structure
 ```
