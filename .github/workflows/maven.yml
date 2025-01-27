@@ -43,7 +43,7 @@ jobs:
       - name: Run Tests
         run: |
           pwd
-          cd ideoGameAPITesting
+          echo cd ideoGameAPITesting
           mvn -B package --file pom.xml
   Output:
     runs-on: ubuntu-latest
