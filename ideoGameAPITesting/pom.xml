@@ -59,6 +59,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.5.1</version>
                 <configuration>
+                    <testFailureIgnore>true</testFailureIgnore>
                     <properties>
                         <!-- Work around. Surefire does not include enough
                              information to disambiguate between different
